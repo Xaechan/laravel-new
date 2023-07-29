@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tweets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained(); //mengetahui user yang bikin tweet
+            $table->string('tweet');
             $table->timestamps();
         });
     }
